@@ -1,0 +1,14 @@
+shortest path n to n
+shortest path 1 to n dense
+shortest path 1 to n sparse
+maximum flow
+maximum flow min cost
+fenwick tree
+greatest common divisor
+n choose k mod p
+modular exponentiation
+minimum spanning tree
+depth first search
+breath first search
+disjoint sets
+computational geometry (Cormen pp. 1014-1047)
