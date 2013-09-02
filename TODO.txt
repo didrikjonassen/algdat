@@ -12,5 +12,4 @@ depth first search
 breath first search
 disjoint sets
 computational geometry (Cormen pp. 1014-1047)
-matrix multiplication
 matrix exponentiation
