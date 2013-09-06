@@ -6,7 +6,6 @@ maximum flow min cost
 fenwick tree
 greatest common divisor
 n choose k mod p
-modular exponentiation
 minimum spanning tree
 depth first search
 breath first search
