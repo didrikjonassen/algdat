@@ -14,4 +14,3 @@ disjoint sets
 computational geometry (Cormen pp. 1014-1047)
 matrix exponentiation
 select
-heap
