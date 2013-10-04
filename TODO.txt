@@ -1,7 +1,6 @@
 shortest path n to n
 shortest path 1 to n dense
 shortest path 1 to n sparse
-shortest path 1 to n negative edges
 maximum flow
 maximum flow min cost
 fenwick tree
