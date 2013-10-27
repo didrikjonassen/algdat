@@ -10,13 +10,16 @@ public class ShortestPath {
      *            The edges in the graph. Assumed to be on the form {{u1, v1,
      *            c1},{u2, v2, c2},...,{un, vn, cn}} where u and v are vertices
      *            and c is the cost of going from u to v.
-     * @return The cost of the shortest path from Vertex 0 to all vertices.
+     * @param s
+     *            The vertex in the graph which the search is done from.
+     * @return The cost of the shortest path from Vertex s to all vertices.
      */
-    public static int[] bellmanFord(int v, int[][] e) {
+    public static int[] bellmanFord(int v, int[][] e, int s) {
         int[] best = new int[v];
-        for (int i = 1; i < v; i++) {
+        for (int i = 0; i < v; i++) {
             best[i] = Integer.MAX_VALUE;
         }
+        best[s] = 0;
         for (int i = 0; i < v; i++) {
             for (int k = 0; k < e.length; k++) {
                 int cost = best[e[k][0]] + e[k][2];
