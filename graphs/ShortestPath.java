@@ -17,7 +17,7 @@ public class ShortestPath {
     public static int[] bellmanFord(int v, int[][] e, int s) {
         int[] best = new int[v];
         for (int i = 0; i < v; i++) {
-            best[i] = Integer.MAX_VALUE;
+            best[i] = Integer.MAX_VALUE/2;
         }
         best[s] = 0;
         for (int i = 0; i < v; i++) {
