@@ -7,6 +7,7 @@ public class Fraction {
     public Fraction(long n, long d){
         this.n = n;
         this.d = d;
+        reduce();
     }
     
     public void reduce(){
@@ -56,15 +57,29 @@ public class Fraction {
         return n + (d == 1 ? "" : "/" + d);
     }
     
-    public Fraction copy(){
-        return new Fraction(n, d);
+    public static Fraction valueOf(double d){
+        long l = Double.doubleToLongBits(d);
+        long sign = (l & Long.MIN_VALUE);
+        sign = ((sign+2) % 3) - 1;
+        Fraction fraction = new Fraction(sign * (l & 0x000fffffffffffffL | 0x0010000000000000L), 0x0010000000000000L);
+        long expl = ((l & 0x7ff0000000000000L) >> (13*4)) - 1023;
+        if(expl < 0){
+            expl = -expl;
+            long g = Fraction.gcd(fraction.n, 1 << expl);
+            fraction.n /= g;
+            fraction.d *= (1<<expl)/g;
+        }
+        else{
+            long g = Fraction.gcd(fraction.d, 1 << expl);
+            fraction.d /= g;
+            fraction.n *= (1 << expl)/g;
+        }
+        fraction.reduce();
+        return fraction;
     }
     
-    public static void main(String[] args) {
-        Fraction a = new Fraction(2, 5);
-        Fraction b = new Fraction(2, 4);
-        a.sub(b);
-        System.out.println(a);
+    public Fraction copy(){
+        return new Fraction(n, d);
     }
 
 }
