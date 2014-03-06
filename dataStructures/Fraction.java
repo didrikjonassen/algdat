@@ -46,8 +46,7 @@ public class Fraction {
     }
     
     public static long gcd(long a, long b){
-        if(b == 0) return a;
-        return gcd(b, a%b);
+        return b==0 ? a : gcd(b, a%b);
     }
 
     @Override
